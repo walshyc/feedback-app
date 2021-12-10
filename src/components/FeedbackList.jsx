@@ -5,7 +5,7 @@ const FeedbackList = ({ feedback, handleDelete }) => {
     return <p>No feedback yet</p>;
   }
   return (
-    <>
+    <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
       {feedback.map((fb) => (
         <FeedbackItem
           key={fb.id}
@@ -13,7 +13,7 @@ const FeedbackList = ({ feedback, handleDelete }) => {
           handleDelete={handleDelete}
         ></FeedbackItem>
       ))}
-    </>
+    </div>
   );
 };
 
