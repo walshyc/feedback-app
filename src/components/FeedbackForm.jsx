@@ -1,16 +1,26 @@
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import FeedbackContext from '../context/FeedbackContext';
 import RatingSelect from './RatingSelect';
 import Button from './shared/Button';
 import Card from './shared/Card';
 
 const FeedbackForm = () => {
-  const { addFeedback } = useContext(FeedbackContext);
+  const { addFeedback, feedbackEdit, updateFeedback } =
+    useContext(FeedbackContext);
+
+  useEffect(() => {
+    if (feedbackEdit.edit === true) {
+      setBtnDisabled(false);
+      setText(feedbackEdit.item.text);
+      setRating(feedbackEdit.item.rating);
+    }
+  }, [feedbackEdit]);
+
   const [text, setText] = useState('');
   const [rating, setRating] = useState(10);
   const [message, setMessage] = useState('');
   const [btnDisabled, setBtnDisabled] = useState(true);
+
   const handleTextChange = (e) => {
     if (text === '') {
       setBtnDisabled(true);
@@ -32,9 +42,12 @@ const FeedbackForm = () => {
         text,
         rating,
       };
-      addFeedback(newFeedback);
+      if (feedbackEdit.edit === true) {
+        updateFeedback(feedbackEdit.item.id, newFeedback);
+      } else {
+        addFeedback(newFeedback);
+      }
       setText('');
-
       setBtnDisabled(true);
     }
   };
@@ -52,7 +65,7 @@ const FeedbackForm = () => {
               onChange={handleTextChange}
               type="text"
               placeholder="Write a review"
-              className="bg-transparent outline-0"
+              className="bg-transparent outline-0 w-full"
             />
             <Button version="primary" type="submit" isDisabled={btnDisabled}>
               Send

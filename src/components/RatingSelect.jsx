@@ -1,7 +1,14 @@
-import { useState } from 'react';
-
+import { useState, useContext, useEffect } from 'react';
+import FeedbackContext from '../context/FeedbackContext';
 const RatingSelect = ({ select }) => {
   const [selected, setSelected] = useState(8);
+
+  const { feedbackEdit } = useContext(FeedbackContext);
+
+  useEffect(() => {
+    setSelected(feedbackEdit.item.rating);
+  }, [feedbackEdit]);
+
   const handleChange = (e) => {
     setSelected(+e.currentTarget.value);
     select(+e.currentTarget.value);
@@ -11,8 +18,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 1
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <label className="p-4 cursor-pointer select-none" htmlFor="num1">
@@ -31,8 +38,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 2
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
@@ -51,8 +58,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 3
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
@@ -71,8 +78,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 4
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
@@ -91,8 +98,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 5
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
@@ -111,8 +118,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 6
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
@@ -131,8 +138,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 7
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
@@ -151,8 +158,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 8
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
@@ -171,8 +178,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 9
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
@@ -191,8 +198,8 @@ const RatingSelect = ({ select }) => {
       <div
         className={
           selected === 10
-            ? 'bg-yellow-300 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
-            : 'bg-gray-300 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            ? 'bg-yellow-300 hover:bg-yellow-200 text-gray-600 font-bold h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
+            : 'bg-gray-300 hover:bg-yellow-200 text-gray-600 h-12 w-12 rounded-full flex justify-center items-center cursor-pointer'
         }
       >
         <input
