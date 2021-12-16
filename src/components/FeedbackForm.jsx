@@ -58,7 +58,7 @@ const FeedbackForm = () => {
           <h2 className="font-bold text-3xl text-center">
             How would you rate your service with us?
           </h2>
-          <RatingSelect select={(rating) => setRating(rating)}></RatingSelect>
+          <RatingSelect select={(r) => setRating(r)}></RatingSelect>
           <div className="flex flex-col gap-8 sm:flex-row justify-between border p-3">
             <input
               value={text}

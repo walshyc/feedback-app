@@ -1,8 +1,5 @@
-import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import FeedbackData from '../src/data/feedbackData';
 import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
