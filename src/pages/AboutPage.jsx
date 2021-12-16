@@ -7,7 +7,7 @@ const AboutPage = () => {
       <p className="text-lg">
         This is a React app to leave feedback for a product or service
       </p>
-      <Link className='pt-4 ml-auto' to="/">
+      <Link className="pt-4 ml-auto" to="/">
         <Button version="primary" type="btn">
           Go Home
         </Button>
