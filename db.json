@@ -1,0 +1,29 @@
+{
+  "feedback": [
+    {
+      "id": 1,
+      "rating": 10,
+      "text": "This is feedack item 1 coming form the backend"
+    },
+    {
+      "id": 2,
+      "rating": 8,
+      "text": "This is feedack item 2 coming form the backend"
+    },
+    {
+      "id": 3,
+      "rating": 5,
+      "text": "This is feedack item 3 coming form the backend"
+    },
+    {
+      "text": "This is a new itemasxasx",
+      "rating": 1,
+      "id": 4
+    },
+    {
+      "text": "asxasxasxasxasx",
+      "rating": 10,
+      "id": 5
+    }
+  ]
+}
